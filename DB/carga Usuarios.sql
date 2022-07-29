@@ -1,0 +1,3 @@
+
+
+SELECT * FROM PADRON_COMPLETOUse proyectoIngenieriaALTER PROCEDURE sp_loadUsuariosAS SET NOCOUNT ONBEGIN   INSERT INTO usuario    SELECT nombre,CONCAT(primerApellido,' ', [ segundoApellido] ) AS apellidos, S.idSexo AS idSexo, D.cedula,		   null AS foto, D.vencimientoCedula,NULL AS departamento, NULL AS correo, NULL AS celular, NULL AS rol FROM PADRON_COMPLETO AS D		INNER JOIN Sexo AS S		ON  D.sexo = S.idSexo  ORDER BY  D.Cedula;ENDEXEC sp_loadUsuarios;SELECT * FROM Usuario;SELECT COUNT(*) FROM Usuario;

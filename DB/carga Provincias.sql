@@ -1,0 +1,1 @@
+SELECT * FROM Destelec$;use proyectoIngenieria2CREATE PROCEDURE sp_loadProvinciasAS SET NOCOUNT ONBEGIN   INSERT INTO Provincia  SELECT DISTINCT  D.Provincia, SUBSTRING(CAST(D.codigoCompuesto AS NVARCHAR(10)),1,1) AS idProvincia FROM Destelec$ AS D  ORDER BY  D.Provincia; ENDEXEC sp_loadProvincias;QDELETE  Provincia;USE MASTER;
